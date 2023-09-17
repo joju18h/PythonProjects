@@ -123,4 +123,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 .DS_Store
+
+#local files
 wawa.py
+config.json

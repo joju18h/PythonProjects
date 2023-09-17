@@ -4,8 +4,11 @@ from tkinter import messagebox
 import geocode
 import fetchWeather
 import currentlocation
+import json
 
-API_KEY = "e7466c7574d23a1349e0929ef77c106e"
+with open('weatherclient/config.json') as config_file:
+    data = json.load(config_file)
+    API_KEY = data['API_KEY']
 
 def fetchCurrentWeather():
     location = currentlocation.get_location()
