@@ -1,15 +1,16 @@
 from tkinter import *
 import tkinter as tk
 from tkinter import messagebox
-import geocoder
+import geocode
 import fetchWeather
+import currentlocation
 
 API_KEY = "e7466c7574d23a1349e0929ef77c106e"
 
 def searchWeather():
 
     city = city_text.get()
-    location_info = geocoder.generateCordinates(API_KEY, city)
+    location_info = geocode.generateCordinates(API_KEY, city)
     cordinates = location_info[0]
     latitude = cordinates['lat']
     longitude = cordinates['lon']
