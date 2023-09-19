@@ -17,7 +17,7 @@ def fetchCurrentWeather():
     weather = fetchWeather.fetchWeather(latitude, longitude, API_KEY)
     if weather:
         clocation['text'] = '{} ,{}'.format(weather[0], weather[1])
-        ctemperature_label['text'] = str(weather[2])+" °C"
+        ctemperature_label['text'] = str(int(round(weather[2])))+" °C"
         cweather_l['text'] = weather[4].title()
     else:
         messagebox.showerror('Error', 'Cannot find city {}'.format(weather[0]))
@@ -32,7 +32,7 @@ def searchWeather():
     weather = fetchWeather.fetchWeather(latitude, longitude, API_KEY)
     if weather:
         location_lbl['text'] = '{} ,{}'.format(weather[0], weather[1])
-        temperature_label['text'] = str(weather[2])+" °C"
+        temperature_label['text'] = str(int(round(weather[2])))+" °C"
         weather_l['text'] = weather[4].title()
     else:
         messagebox.showerror('Error', 'Cannot find city {}'.format(city))
