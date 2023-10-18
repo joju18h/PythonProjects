@@ -42,6 +42,9 @@ def searchWeather():
 app = tk.Tk()
 app.title("Weather App")
 app.geometry("400x400")
+bg = PhotoImage(file="weatherclient/resources/bg.png")
+label1 = Label(app, image = bg)
+label1.place(x = 0, y = 0)
 currentWeather  = tk.Label(app, text="Current Weather", font=('bold', 20))
 currentWeather.pack()
 clocation =  tk.Label(app, text="", font=('bold', 20))
@@ -53,8 +56,8 @@ cweather_l.pack()
 
 fetchCurrentWeather()
 
-seperator = tk.Label(app, text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-seperator.pack()
+'''seperator = tk.Label(app, text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+seperator.pack()'''
 
 
 city_text = tk.StringVar()
